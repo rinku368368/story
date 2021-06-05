@@ -1,0 +1,166 @@
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story
+$ git init
+Initialized empty Git repository in C:/Users/rao1974/Desktop/story/.git/
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ ls -a
+./  ../  .git/  chapter-1.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter-1.txt
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   chapter-1.txt
+
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git commit -m "complete chapter-1"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'rao1974@DESKTOP-99L37PP.(none)')
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git config --global user.email "rinku368368@gmail.com"
+error: could not lock config file C:/PROGRAM FILES/.gitconfig: Permission denied
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git config user.email "rinku368368@gmail.com"
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git config user.name "rasagna"
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git commit -m "complete chapter"
+[master (root-commit) 8048214] complete chapter
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter-1.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git log
+commit 804821435872747aaf27f6ac91dec0057fbe300f (HEAD -> master)
+Author: rasagna <rinku368368@gmail.com>
+Date:   Sat Jun 5 18:22:50 2021 +0530
+
+    complete chapter
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ touch chapter-2.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ touch chapter-3.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter-2.txt
+        chapter-3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git add .
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+On branch master
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   chapter-2.txt
+        new file:   chapter-3.txt
+
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git commit -m "complete chapter 2&3"
+[master db27707] complete chapter 2&3
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter-2.txt
+ create mode 100644 chapter-3.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git log
+commit db27707d021a2d7b7ad90ab9a67a4023c06c63ff (HEAD -> master)
+Author: rasagna <rinku368368@gmail.com>
+Date:   Sat Jun 5 18:41:51 2021 +0530
+
+    complete chapter 2&3
+
+commit 804821435872747aaf27f6ac91dec0057fbe300f
+Author: rasagna <rinku368368@gmail.com>
+Date:   Sat Jun 5 18:22:50 2021 +0530
+
+    complete chapter
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git diff chapter-3.txt
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git log
+commit db27707d021a2d7b7ad90ab9a67a4023c06c63ff (HEAD -> master)
+Author: rasagna <rinku368368@gmail.com>
+Date:   Sat Jun 5 18:41:51 2021 +0530
+
+    complete chapter 2&3
+
+commit 804821435872747aaf27f6ac91dec0057fbe300f
+Author: rasagna <rinku368368@gmail.com>
+Date:   Sat Jun 5 18:22:50 2021 +0530
+
+    complete chapter
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git remote add origin https://github.com/rinku368368/story.git
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$ git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 652 bytes | 652.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/rinku368368/story.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+rao1974@DESKTOP-99L37PP MINGW64 /c/Users/rao1974/Desktop/story (master)
+$
